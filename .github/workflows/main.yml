@@ -8,8 +8,8 @@ jobs:
       runs-on: ubuntu-latest
       name: "Build nodejs images"
       env:
-        DOCKER_USERNAME1: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD1: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         DOCKERHUB_REPOSITORY: ${{ secrets.DOCKER_USERNAME }}/nosr:latest
 
       steps:
