@@ -1,5 +1,5 @@
 # 基于官方 bncr 镜像
-FROM bncr:latest
+FROM anmour/bncr:latest
 
 # 使用 Alpine 包管理器安装 expect
 RUN apk add --no-cache expect
