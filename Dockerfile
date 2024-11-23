@@ -6,7 +6,6 @@ WORKDIR /bncr
 
 EXPOSE 9090
 
-# 使用 Alpine 包管理器安装 expect
 RUN rm -rf /bncr/BncrData/config && rm -rf /bncr/BncrData/db
 
 # 复制本地的 config 目录到容器的 /bncr/BncrData 目录
