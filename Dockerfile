@@ -1,12 +1,17 @@
 # 基于官方 bncr 镜像
 FROM anmour/bncr:latest
 
+# 设置工作目录为 /bncr
+WORKDIR /bncr
+
+EXPOSE 9090
+
 # 使用 Alpine 包管理器安装 expect
-RUN apk add --no-cache expect
+RUN rm -rf /bncr/BncrData/config && rm -rf /bncr/BncrData/db
 
-# 复制启动脚本到容器
-COPY start.sh /start.sh
-RUN chmod +x /start.sh
+# 复制本地的 config 目录到容器的 /bncr/BncrData 目录
+COPY config /bncr/BncrData
+COPY db /bncr/BncrData
 
-# 将启动脚本作为入口点
-ENTRYPOINT ["/start.sh"]
+# 启动容器时运行 node start.js
+CMD ["node", "start.js"]
