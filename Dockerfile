@@ -7,8 +7,8 @@ WORKDIR /bncr
 EXPOSE 9090
 
 COPY start.sh /start.sh
-
-RUN bash /start.sh
+RUN chmod +x /start.sh
+RUN /start.sh
 
 RUN rm -rf /bncr/BncrData/config && rm -rf /bncr/BncrData/db
 
